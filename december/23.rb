@@ -1,7 +1,13 @@
 require 'rspec'
 
 def random_numbers
+  arr = []
+  20.times { arr.push(rand(1000))}
+  arr
 end
+
+#better syntax
+# Array.new(20) { rand(1000) }
 
 describe 'Random number collection generator' do
   it 'creates a collection of random numbers ranging from 0 to 999' do
