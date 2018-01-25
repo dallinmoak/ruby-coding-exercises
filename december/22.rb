@@ -37,6 +37,16 @@ rangers = [
 ]
 
 def position_filter(headers, *data)
+  # filled = []
+  # i = 0
+  # data.each do |datum|
+  #   while i < headers.length
+  #     filled[i] = [headers[i],datum[i]]
+  #     i += 1
+  #   end
+  # end
+  # filled
+  headers.zip(*data)
 end
 
 describe 'Position Filter' do
@@ -44,5 +54,6 @@ describe 'Position Filter' do
     test_headers = ['1B', '2B', 'P']
     test_team = ['First Base Player', 'Second Base Player', 'Pitcher']
     expect(position_filter(test_headers, test_team).first).to eq(['1B', 'First Base Player'])
+    expect(position_filter(headers, astros, rangers).first).to eq(['1B', 'Gurriel','Fielder'])
   end
 end
