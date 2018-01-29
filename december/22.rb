@@ -37,17 +37,19 @@ rangers = [
 ]
 
 def position_filter(headers, *data)
-  # filled = []
-  # i = 0
-  # data.each do |datum|
-  #   while i < headers.length
-  #     filled[i] = [headers[i],datum[i]]
-  #     i += 1
-  #   end
-  # end
-  # filled
-  headers.zip(*data)
+  filled = []
+  data.each.with_index do |datum, i|
+    # p datum
+    j = 0
+    while j < headers.length
+      filled[i] = [headers[j],datum[j]]
+      j += 1
+    end
+  end
+  filled
+  # headers.zip(*data)
 end
+p position_filter(headers, astros, rangers)
 
 describe 'Position Filter' do
   it 'lines up players with their positions' do
