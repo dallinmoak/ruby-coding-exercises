@@ -1,6 +1,11 @@
 require 'rspec'
 
 def generate_alphabet
+  arr = []
+  ('a'..'z').each do |letter|
+    arr.push(letter.to_s)
+  end
+  arr
 end
 
 describe 'Alphabet generator' do
