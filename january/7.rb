@@ -8,10 +8,10 @@ menu = {
 
 def daily_special hash
   arr = []
-  hash.each_value do |value|
-    arr.push(value)
-  end
+  hash.each_value { |value| arr.push(value) }
   arr.flatten.sample
+  # #Ryan's solution:
+  # hash[hash.keys.sample].sample
 end
 
 p daily_special(menu)
