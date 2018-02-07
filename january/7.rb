@@ -12,6 +12,8 @@ def daily_special hash
   arr.flatten.sample
   # #Ryan's solution:
   # hash[hash.keys.sample].sample
+  # #rustin's solution:
+  # hash.values.flatten.sample
 end
 
 p daily_special(menu)
