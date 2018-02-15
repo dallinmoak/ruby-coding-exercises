@@ -1,6 +1,16 @@
 require 'rspec'
 
 def csv_parser file_path
+  # #long solution:
+  # crm = File.read(file_path)
+  # arr1 = crm.split(/\R/)
+  # arr2 = []
+  # arr1.each do |line|
+  #   arr2.push(line.split(','))
+  # end
+  # arr2
+  #short solution:
+  File.read(file_path).split(/\R/).map { |l| l.split(',')}
 end
 
 describe 'CSV Parser' do
